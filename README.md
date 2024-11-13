@@ -1,4 +1,4 @@
-# Noor - Offline AI Tutor
+Noor - Offline AI Tutor
 =======================
 
 An open-source offline AI tutor built to help Afghan girls continue their education. Noor runs entirely locally on a Raspberry Pi 5, using Gemma for natural conversation and guidance without requiring internet access.
