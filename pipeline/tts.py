@@ -2,7 +2,7 @@ import subprocess
 import tempfile
 import os
 
-# Replace with your Persian text
+# Sample text
 persian_text = "سلام! این یک آزمایش است."
 
 # Path to the Piper model for Persian (replace with the correct model path)

@@ -1,0 +1,4 @@
+SpeechRecognition==3.10.1
+PyAudio==0.2.14 
+ffmpeg-python==0.2.0  
+piper-tts==1.2.0
