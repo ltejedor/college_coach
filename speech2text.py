@@ -21,6 +21,7 @@
 # Author: peppe8o
 # Date: Mar 10th, 2023
 # Version: 1
+# modified by leeps, nov 13 2024
 
 # import required modules
 import sys, os
@@ -32,9 +33,9 @@ from subprocess import Popen, DEVNULL, STDOUT
 # for testing purposes, we're just using the default API key
 # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
 # instead of `r.recognize_google(audio)`
-def silent_google_recognition(audio_file):
+def silent_google_recognition(audio_file, language="en-US"):
     sys.stdout = open(os.devnull, 'w')
-    result = r.recognize_google(audio_file)
+    result = r.recognize_google(audio_file, language=language)
     sys.stdout = sys.__stdout__
     return result
 
@@ -64,8 +65,9 @@ r = sr.Recognizer()
 with sr.AudioFile(input_file) as source:
      audio = r.record(source)
 
+# Use 'fa-IR' for Persian language recognition
 try:
-    print("Google Speech Recognition thinks you said:\n\n" + silent_google_recognition(audio))
+    print("Google Speech Recognition thinks you said:\n\n" + silent_google_recognition(audio, language="fa-IR"))
 except sr.UnknownValueError:
     print("Google Speech Recognition could not understand audio")
 except sr.RequestError as e:
